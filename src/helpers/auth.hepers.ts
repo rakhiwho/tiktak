@@ -17,6 +17,10 @@ async function generate_Access_Refresh_Token(userId: string | mongoose.Types.Obj
         if (!User) {
             throw new ApiError(404, UserError.NO_USER_FOUND);
         }
+        if (typeof User.generateAccessToken !== "function" || typeof User.generateRefreshToken !== "function") {
+            console.error("Token generation methods missing on User model instance.");
+            throw new ApiError(500, statusError.INTERNAL_SERVER_ERROR);
+          }
         const accessToken = User.generateAccessToken();
         const refreshToken = User.generateRefreshToken();
 

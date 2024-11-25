@@ -18,13 +18,13 @@ function LoginPage() {
       user.userName.length > 0 &&
       user.password.length > 0 ) {
         setLoading(true)
-      const res = await axios.post("/api/users/login", {
+      const res = await axios.post("/api/users/signin", {
         userName: user.userName,
         password: user.password,
       });
       setLoading(false)
    
-      setUser({ userName: "", password: "" });
+     
 
       console.log("Login Response:", res); // Check the response status
       if (res.status === 200) {
@@ -46,7 +46,7 @@ function LoginPage() {
       {loading && <h1>proccessing...</h1>}
       {!loading &&<>
       <form
-        onSubmit={(e) => handleSubmit(e)}
+        onSubmit={handleSubmit}
         className="flex flex-col content-between  "
       >
         <div>

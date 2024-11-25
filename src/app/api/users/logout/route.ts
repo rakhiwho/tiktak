@@ -1,39 +1,56 @@
-import { NextApiRequest, NextApiResponse } from "next";
+import { NextApiRequest  } from "next";
 import UserModel from "@/model/user";
 import { IUser } from "@/interface/IUser";
+import { UserResponse } from "@/OKRespose/User";
+import { NextRequest, NextResponse } from "next/server";
+import { statusError } from "@/error/status.errors";
+import { UserError } from "@/error/userError";
+import { getDataFromToken } from "@/helpers/get.tokendata";
 
- 
-export interface AuthenticatedRequest extends NextApiRequest {
+export interface AuthenticatedRequest extends Request {
   user?: IUser;
 }
 
-export async  function GET (req: AuthenticatedRequest, res: NextApiResponse){
+export async function GET(req: NextRequest ) {
   try {
-     
-    if (!req.user || !req.user._id) {
-      return res.status(401).json({ message: "User not authenticated" });
+      
+    const userId = await getDataFromToken(req);
+    console.log(userId);
+    const user =  await UserModel.findById(userId);
+    if (!user || !user._id) {
+      return NextResponse.json({ type: UserError.UNAUTHORIZED_USER }, { status: 401 });
     }
-
-     
-    await UserModel.findByIdAndUpdate(req.user._id, {
-      $unset: {
-        refreshToken: 1, // Remove refreshToken field from user document
+    
+    await UserModel.findByIdAndUpdate(
+      user._id,
+      {
+        $unset: {
+          refreshToken: 1, 
+        },
       },
-    }, {
-      new: true,  
-    });
-
-     
-    res.setHeader("Set-Cookie", [
-      `accessToken=; Max-Age=0; Path=/; HttpOnly; Secure; SameSite=Strict`,
-      `refreshToken=; Max-Age=0; Path=/; HttpOnly; Secure; SameSite=Strict`,
-    ]);
-
-    return res.status(200).json({ message: "User logged out" });
-  } catch (error) {
-    console.log(error)
-    return res.status(500).json({ message: "Logout failed" });
-  }
-};
-
+      {
+        new: true,
+      }
+    );
  
+
+    return NextResponse.json(
+      { type: UserResponse.USER_LOGGED_OUT },
+      {
+        status: 200,
+        headers: {
+          "Set-Cookie": [
+            `accessToken=; Max-Age=0; Path=/; HttpOnly; Secure; SameSite=Strict`,
+            `refreshToken=; Max-Age=0; Path=/; HttpOnly; Secure; SameSite=Strict`,
+          ].join(","),
+        },
+      }
+    );
+  } catch (error) {
+    console.log(error);
+    return NextResponse.json(
+      { typr: statusError.INTERNAL_SERVER_ERROR },
+      { status: 500 }
+    );
+  }
+}

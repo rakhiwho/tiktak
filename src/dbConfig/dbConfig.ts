@@ -18,6 +18,7 @@ export default async function db() {
 
     connection.on("connected", () => {
       console.log("MongoDB is running successfully! :)");
+      isConnected = true;
     });
 
     connection.on("error", (err) => {
@@ -28,6 +29,7 @@ export default async function db() {
     // Event listener for disconnection
     connection.on("disconnected", () => {
       console.warn("MongoDB connection is disconnected.");
+      isConnected = false; 
     });
   } catch (error) {
     console.error(

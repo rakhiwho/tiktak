@@ -2,17 +2,18 @@ import db from "@/dbConfig/dbConfig";
 import UserModel from "@/model/user";
 import { NextRequest, NextResponse } from "next/server";
 import { UserError } from "@/error/userError";
-import { UserResponse } from "@/OKRespose/User";
+ 
 import { statusError } from "@/error/status.errors";
 import { generate_Access_Refresh_Token } from "@/helpers/auth.hepers";
-import { cookies } from "next/headers";
+ 
 
 db();
 
 export async function POST(request: NextRequest) {
+   
   try {
-    const reqBody = await request.json();
-    const { userName, password } = reqBody;
+     
+    const { userName, password } =await request.json();
  
     if ([userName, password].some((field) => field?.trim() === "")) {
       return NextResponse.json(
@@ -23,7 +24,7 @@ export async function POST(request: NextRequest) {
 
     //checking if user exists
     const user = await UserModel.findOne({ userName });
-
+  
     if (!user) {
       return NextResponse.json(
         { type: UserError.NO_USER_FOUND },
@@ -42,10 +43,10 @@ export async function POST(request: NextRequest) {
       user._id
     );
     const options = {
-      httpOnly: true,
+      httpOnly: false,
       secure: process.env.NODE_ENV === 'production',
     };
-
+ 
     const response = NextResponse.json(
       { type: "logged in successfully" + user },
       { status: 200 }
@@ -55,7 +56,8 @@ export async function POST(request: NextRequest) {
     response.cookies.set("accessToken", accessToken, options);
     response.cookies.set("refreshToken", refreshToken, options);
 
-    return response;
+
+    return  response;
   } catch (error) {
     console.log(error);
     return NextResponse.json(

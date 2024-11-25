@@ -6,7 +6,7 @@
     "build:tailwind": "ts-node tailwind.config.ts",
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "npm start",
     "lint": "next lint"
   },
   "dependencies": {
@@ -19,11 +19,13 @@
     "next": "14.2.15",
     "nodemailer": "^6.9.15",
     "react": "^18",
-    "react-cookie": "^7.2.1",
+    "react-cookie": "^7.2.2",
     "react-cookies": "^0.1.1",
     "react-dom": "^18",
     "react-hot-toast": "^2.4.1",
-    "react-icons": "^5.3.0"
+    "react-icons": "^5.3.0",
+    "socket.io": "^4.8.1",
+    "socket.io-client": "^4.8.1"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",

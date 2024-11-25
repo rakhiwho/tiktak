@@ -1,0 +1,104 @@
+.bg_photo {
+    background-image: url("../fonts/bg.png");
+    background-size: cover;
+    background-position: center;
+  }
+  .nav{
+    width: var(--width);
+    height: var(--height);
+ }
+
+ .sm{
+    display: flex;
+ }
+ .lg{
+    display: none;
+    overflow: hidden;
+ 
+ }
+ .rotate-on-hover {
+    transition: transform 0.5s; /* Optional: Add a transition effect */
+  }
+  
+  .rotate-on-hover:hover {
+    transform: rotate(90deg);
+  }
+  .animation_height {
+   height: 0%;
+   animation: heightAnimation 0.5s ease-in;
+ }
+ .flex_body{
+   display: flex;
+   flex-direction: column;
+ }
+ @keyframes heightAnimation {
+   0% {
+     height: 0%;
+   }
+   50% {
+     height: 50%;
+   }
+   100% {
+     height: 100%;
+   }
+ }
+ 
+/* Tablets: 768px to 1024px */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .bg_photo{
+        background-image:  url("../fonts/bg-lg.png");
+    }
+    .nav{
+        width: var(--m);
+    
+     }
+     .sm{
+        display: none;
+     }
+     .lg{
+        display: flex;
+     }
+     .flex_body{
+      flex-direction: row;
+     }
+  }
+  
+  /* Small Desktops: 1024px to 1440px */
+  @media (min-width: 1024px) and (max-width: 1440px) {
+    .bg_photo{
+        background-image:  url("../fonts/bg-lg.png");
+    }
+    .nav{
+        width: var(--m);
+       
+     }
+     .sm{
+        display: none;
+     }
+     .lg{
+        display: flex;
+     }
+     .flex_body{
+      flex-direction: row;
+     }
+  }
+  
+  /* Large Desktops: 1440px and above */
+  @media (min-width: 1440px) {
+    .bg_photo{
+        background-image:  url("../fonts/bg-lg.png");
+    }
+    .nav{
+        width: var(--m);
+     
+     }
+     .sm{
+        display: none;
+     }
+     .lg{
+        display: flex;
+     }
+     .flex_body{
+      flex-direction: row;
+     }
+  }

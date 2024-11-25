@@ -1,0 +1,36 @@
+.bg_photo {
+    background-image: url("../../fonts/bg-lg.png");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .height_p{
+  height: 12vh;
+  width: 12vh;
+  } 
+
+
+ 
+/* Tablets: 768px to 1024px */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .height_p{
+        height: 25vh;
+        width: 25vh;
+        } 
+  }
+  
+  /* Small Desktops: 1024px to 1440px */
+  @media (min-width: 1024px) and (max-width: 1440px) {
+    .height_p{
+        height: 25vh;
+        width: 25vh;
+        } 
+  }
+  
+  /* Large Desktops: 1440px and above */
+  @media (min-width: 1440px) {
+    .height_p{
+        height: 25vh;
+        width: 25vh;
+        } 
+  }

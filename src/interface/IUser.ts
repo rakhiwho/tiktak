@@ -22,4 +22,8 @@ interface IUser extends Document {
     email: string;
     username: string;
   }
-  export type {IUser , JwtPayload }
+  interface IconsProps {
+    move: string;  
+ 
+  }
+  export type {IUser , JwtPayload , IconsProps}
