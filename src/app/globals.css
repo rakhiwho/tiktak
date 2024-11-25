@@ -3,20 +3,35 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #322530;
+  --foreground: #f1e9f2;
+  --width :100vw;
+  --m: 0vw;
+  --height : fit-content;
+ 
+  --bg :  #17011c;
 }
 
+.hover-bg{
+padding:  5px;
+transition: bg 100 ease-in-out;
+}
+.hover-bg:hover{
+  background: rgba(251, 251, 251, 0.5);
+  color: var(--bg);
+  
+ 
+}
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #3e3240;
     --foreground: #ededed;
   }
 }
 
 body {
   color: var(--foreground);
-  background: var(--background);
+  background-color: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -24,4 +39,49 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+
+.bg_color{
+  background: #17011c;
+}
+
+.bg_page{
+  background: #3b2540;
+}
+
+.margin_home{
+  margin-left: var(--m);
+}
+
+.width_uni{
+ width: var(--width) ;
+}
+
+
+/* Tablets: 768px to 1024px */
+@media (min-width: 768px) and (max-width: 1024px) {
+   :root{
+  --m :15vw;
+  --width : 85vw;
+  --height : 100vh ;
+   }
+}
+
+/* Small Desktops: 1024px to 1440px */
+@media (min-width: 1024px) and (max-width: 1440px) {
+  :root{
+    --m :15vw;
+    --width : 85vw;
+    --height : 100vh ;
+     }
+}
+
+/* Large Desktops: 1440px and above */
+@media (min-width: 1440px) {
+  :root{
+    --m :12vw;
+    --width : 87vw;
+    --height : 100vh ;
+     }
 }

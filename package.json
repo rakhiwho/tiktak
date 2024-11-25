@@ -3,24 +3,42 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "build:tailwind": "ts-node tailwind.config.ts",
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "npm start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/jsonwebtoken": "^9.0.7",
+    "axios": "^1.7.7",
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.7",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.7.2",
+    "next": "14.2.15",
+    "nodemailer": "^6.9.15",
     "react": "^18",
+    "react-cookie": "^7.2.2",
+    "react-cookies": "^0.1.1",
     "react-dom": "^18",
-    "next": "14.2.15"
+    "react-hot-toast": "^2.4.1",
+    "react-icons": "^5.3.0",
+    "socket.io": "^4.8.1",
+    "socket.io-client": "^4.8.1"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@types/bcryptjs": "^2.4.6",
     "@types/node": "^20",
     "@types/react": "^18",
+    "@types/react-cookies": "^0.1.3",
     "@types/react-dom": "^18",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
+    "autoprefixer": "^10.4.20",
     "eslint": "^8",
-    "eslint-config-next": "14.2.15"
+    "eslint-config-next": "14.2.15",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.14",
+    "ts-node": "^10.9.2",
+    "typescript": "^5"
   }
 }
