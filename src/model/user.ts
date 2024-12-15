@@ -26,6 +26,15 @@ const userSchema: Schema<IUser> = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
+    friend: {
+      type: [mongoose.Schema.Types.ObjectId],  
+      ref: "user",  
+      default: [],
+    },
+    invites: {
+      type: [Number],
+      default: [],
+    },
     forgotPasswordToken: String,
     forgotPasswordExpiry: Date,
     verifyToken: String,

@@ -1,6 +1,6 @@
 import React from 'react'
 
-function VSFRIEND() {
+function VSONLINE() {
   return (
     <div>
       <div></div>
@@ -8,4 +8,4 @@ function VSFRIEND() {
   )
 }
 
-export default VSFRIEND
+export default VSONLINE

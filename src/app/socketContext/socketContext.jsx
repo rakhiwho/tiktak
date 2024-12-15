@@ -8,6 +8,7 @@ const SocketContext = createContext();
 export const Socketio = ({ children }) => {
   const [cookies] = useCookies(["accessToken"]);
   const [onlineUsers, setOnlineUsers] = useState([]);
+  const [inGame, setInGame] = useState([]);
   const [isConnected, setIsConnected] = useState(false);
   const [SOCKET, setSOCKET] = useState(null);
 
@@ -23,6 +24,10 @@ export const Socketio = ({ children }) => {
       SOCKET?.on("getOnlineUsers", (users) => {
         setOnlineUsers(users);
       });
+      SOCKET?.on("getInGameUsers", (users) => {
+        setInGame(users);
+        console.log(inGame)
+      });
       return () => SOCKET?.close();
     } else {
       if (SOCKET) {
@@ -31,12 +36,13 @@ export const Socketio = ({ children }) => {
         setIsConnected(false);
       }
     }
-  }, [cookies.accessToken]);
+  }, [cookies.accessToken ]);
 
   const value = {
     isConnected,
     SOCKET,
     onlineUsers,
+    inGame
   };
   return (
     <SocketContext.Provider value={value}>{children}</SocketContext.Provider>

@@ -5,6 +5,9 @@ import "../style.css";
 import {  TIKTAKTOE } from "../../hooks/easy-comp";
  import '../../components/style.css'
  import "./style.css"
+import GAMEOVER from "./GAMEOVER";
+import { Result } from "postcss";
+
 interface Game1Props {
   game: TIKTAKTOE;
 }
@@ -13,19 +16,21 @@ const Game1: React.FC<Game1Props> = ({ game }) => {
   const [board, setBoard] = useState(game.board);
   const [player, setPlayer] = useState(game.PLAYER);
   const [winner, setWinner] = useState(game.WINNER);
- 
+  const [draw , setDraw] = useState(game.DRAW)
 
   const handleMove = (row: number, col: number): void => {
     game.move(row, col);
 
     setPlayer(game.PLAYER);
     setWinner(game.WINNER);
+    setDraw(game.DRAW)
     setBoard([...game.board]);
   };
 
   return (
     <>
-      <div className=" bg_photo flex flex-col items-center justify-center     my-3">
+
+      <div className={` ${winner ? "blur-md": ""} bg_photo flex flex-col items-center justify-center     my-3`}>
         <div className="flex flex-row">
           <div
             onClick={() => handleMove(0, 0)}
@@ -91,6 +96,13 @@ const Game1: React.FC<Game1Props> = ({ game }) => {
       <p className="ml-0" > current player : {player}</p>
       <br></br>
       {winner != "" && <>winner is :{winner}</>}
+    {
+      winner != "" && <GAMEOVER result={`winner is : ${winner}`} />
+    }
+     {
+      draw   &&  <GAMEOVER result={` DRAW :) `} />
+       
+    }
     </>
   );
 };

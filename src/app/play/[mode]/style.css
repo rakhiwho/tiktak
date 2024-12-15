@@ -9,8 +9,33 @@
   width: 12vh;
   } 
 
-
+.ani-arrow-left{
+   margin-right: 2rem;
+  animation: moveBox 2s ease-out infinite alternate;
+}
  
+@keyframes moveBox {
+  from {
+     margin-right: 2rem ;
+  }
+  to {
+     margin-right: 25rem;
+  }
+}
+
+.ani-arrow-right{
+  margin-left: 2rem;
+ animation: moveBox1 2s ease-in-out infinite alternate;
+}
+
+@keyframes moveBox1 {
+ from {
+    margin-left: 2rem ;
+ }
+ to {
+    margin-left: 16rem;
+ }
+}
 /* Tablets: 768px to 1024px */
 @media (min-width: 768px) and (max-width: 1024px) {
     .height_p{

@@ -1,3 +1,4 @@
+import mongoose from "mongoose";
 
 interface IUser extends Document {
   _id: string;
@@ -12,6 +13,8 @@ interface IUser extends Document {
     verifyTokenEXpiry: Date;
     refreshToken: string;
     refreshTokenEXpiry: Date;
+    friend : mongoose.Schema.Types.ObjectId;
+    invites:[number];
     //methods 
     isPasswordCorrect(password :string) : Promise<boolean>;
     generateAccessToken():string;

@@ -10,9 +10,11 @@ function page() {
   const game = new TIKTAKTOE(); 
  
   return (
-    <div className=' margin_home p-6 flex_body'>
+    <div className='flex justify-between margin_home p-6 w-[80vw] flex_body'>
          
-      <DECOR />
+    <div className=' decor_visibility' >
+    <DECOR />
+      </div> 
         <div className=''>
           <MODES/>
         </div>

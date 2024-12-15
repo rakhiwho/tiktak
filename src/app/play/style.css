@@ -1,3 +1,28 @@
  .bg_color{
     background: #0b0821;
  }
+
+ .decor_visibility{
+ display: none;
+ }
+ 
+/* Tablets: 768px to 1024px */
+@media (min-width: 768px) and (max-width: 1024px) {
+   .decor_visibility{
+       display: node;
+    }
+  }
+  
+  /* Small Desktops: 1024px to 1440px */
+  @media (min-width: 1024px) and (max-width: 1440px) {
+   .decor_visibility{
+      display: node;
+   }
+  }
+  
+  /* Large Desktops: 1440px and above */
+  @media (min-width: 1440px) {
+   .decor_visibility{
+    display: block;
+    }
+  }
