@@ -1,5 +1,6 @@
 import React from 'react'
 import { SocketContextProvider } from '../socketContext/socketContext'
+<<<<<<< HEAD
 import OPTIONS from './[mode]/Options';
 import Divider from '../components/divider'; 
 import { useRouter } from 'next/navigation';
@@ -17,6 +18,24 @@ function MODES() {
           <Divider css='pr-2 w-[75vw] lg:w-[40vw] my-3  h-[0.5px] bg-white lg ' />
          </div>
        
+=======
+ 
+
+function MODES() {
+     const {SOCKET}= SocketContextProvider();
+     const user = localStorage.getItem('user')
+    const playOnline = ()=>{
+     SOCKET?.emit("join" , user );
+    }
+  return (
+    <div>
+      <div className=''>
+          <div onClick={playOnline}>play online</div>
+          <div>play offline</div>
+          <div>play with a friend</div>
+
+        </div>
+>>>>>>> 65b2811a723d6bfbfa819c75e207eecd9c2d83b1
     </div>
   )
 }

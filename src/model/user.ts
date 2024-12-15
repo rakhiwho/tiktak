@@ -26,6 +26,7 @@ const userSchema: Schema<IUser> = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
+<<<<<<< HEAD
     friend: {
       type: [mongoose.Schema.Types.ObjectId],  
       ref: "user",  
@@ -35,6 +36,8 @@ const userSchema: Schema<IUser> = new mongoose.Schema(
       type: [Number],
       default: [],
     },
+=======
+>>>>>>> 65b2811a723d6bfbfa819c75e207eecd9c2d83b1
     forgotPasswordToken: String,
     forgotPasswordExpiry: Date,
     verifyToken: String,
