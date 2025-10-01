@@ -42,7 +42,6 @@ export class TIKTAKTOE implements TIKTAKTOEINF {
     }
   move(row: number, col: number): void {
     if (this.board[row][col] != "" || this.WINNER != "") {
-      console.log(this.board[row][col], this.WINNER);
       return;
     }
 
@@ -78,7 +77,6 @@ export class TIKTAKTOE implements TIKTAKTOEINF {
   checkWin(row :number , col :number):boolean {
     let flag = false;
     for (let i = 0; i <this.board.length; i++) {
-      console.log(this.board[row][i])
          if(this.board[row][i]== this.PLAYER){
           flag = true;
          

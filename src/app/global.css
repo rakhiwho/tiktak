@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single+Ink:wght@100..900&family=Michroma&display=swap');
+.bg-1{
+    background-color: #3D0301;
+}
+.bg-2{
+    background-color: #B03052;
+}
+.bg-3{
+    background-color: #D76C82;
+}
+.bg-4{
+    background-color: #EBE8DB;
+}
+.text-1{
+    color: #3D0301;
+}
+.text-2{
+    color: #B03052;
+}
+.text-3{
+    color: #D76C82;
+}
+.text-4{
+    color: #EBE8DB;
+}
+
+/*  ..............second color  */
+
+ 
+    .bg-pale-1{
+        background-color: #504B38;
+    }
+    .bg-pale-2{
+        background-color: #B9B28A;
+    }
+    .bg-pale-3{
+        background-color: #EBE5C2;
+    }
+    .bg-pale-4{
+        background-color: #F8F3D9;
+    }
+
+    .text-pale-1{
+        color: #504B38;
+    }
+    .text-pale-2{
+        color: #B9B28A;
+    }
+    .text-pale-3{
+        color: #EBE5C2;
+    }
+    .text-pale-4{
+        color: #F8F3D9;
+    }
+
+.quick-3 {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+  }
+ 
+.quick-4 {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+.quick-5 {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+  }
+.quick-6 {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+  }
+.quick-7 {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+.caveat-4{
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+.caveat-5{
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+  }
+.caveat-6{
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+  }
+.caveat-7{
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+  }
+
+
+
+
+  /* font */
+  .michroma-1 {
+  font-family: "Michroma", sans-serif;
+  font-weight: 100;
+  
+}
+  .michroma-2 {
+  font-family: "Michroma", sans-serif;
+  font-weight: 200;
+  
+}
+  .michroma-3 {
+  font-family: "Michroma", sans-serif;
+  font-weight: 300;
+  
+}
+  .michroma-4 {
+  font-family: "Michroma", sans-serif;
+  font-weight: 940;
+  
+}
+  .michroma-5 {
+  font-family: "Michroma", sans-serif;
+  font-weight: 500;
+  
+}
+  .michroma-6 {
+  font-family: "Michroma", sans-serif;
+  font-weight: 600;
+  
+}
+  .michroma-7 {
+  font-family: "Michroma", sans-serif;
+  font-weight: 700;
+  
+}
+  .michroma-8 {
+  font-family: "Michroma", sans-serif;
+  font-weight: 800;
+  
+}
+  .michroma-9 {
+  font-family: "Michroma", sans-serif;
+  font-weight: 900;
+  
+}

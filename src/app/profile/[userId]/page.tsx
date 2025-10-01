@@ -1,7 +1,8 @@
 import React from 'react'
 import '../../globals.css'
-function profilebyId({params}:{ params: { userId: string } }) {
-
+async function profilebyId(props:{ params: Promise<{ userId: string }> }) {
+  const params = await props.params;
+ 
   return (
     <div className=" bg_page   flex flex-col items-center justify-center min-h-screen py-2">
     <h1>PROFILE:</h1>

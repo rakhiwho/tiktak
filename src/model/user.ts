@@ -1,4 +1,4 @@
-import mongoose, { Schema, model , models } from "mongoose";
+import mongoose, { Schema, model, models } from "mongoose";
 import { IUser } from "@/interface/IUser";
 import bcryptjs from "bcryptjs";
 import jwt from "jsonwebtoken";
@@ -26,18 +26,16 @@ const userSchema: Schema<IUser> = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
-<<<<<<< HEAD
     friend: {
-      type: [mongoose.Schema.Types.ObjectId],  
-      ref: "user",  
+      type: [mongoose.Schema.Types.ObjectId],
+      ref: "user",
       default: [],
     },
-    invites: {
-      type: [Number],
+    invites: [{
+      type: [mongoose.Schema.Types.ObjectId],
+      ref: "game",
       default: [],
-    },
-=======
->>>>>>> 65b2811a723d6bfbfa819c75e207eecd9c2d83b1
+    }],
     forgotPasswordToken: String,
     forgotPasswordExpiry: Date,
     verifyToken: String,
@@ -64,7 +62,7 @@ userSchema.methods.generateAccessToken = function (): string {
     },
     process.env.TOKEN_SECRET! as string,
     {
-      expiresIn: "12h",
+      expiresIn: 15000 *60 ,
     }
   );
 };
@@ -76,7 +74,7 @@ userSchema.methods.generateRefreshToken = function (): string {
     },
     process.env.REFRESH_TOKEN_SECRET! as string,
     {
-      expiresIn: "20d",
+      expiresIn: 5000*60 *50,
     }
   );
 };

@@ -1,66 +1,75 @@
 "use client";
 
-import axios from "axios";
-import React, { createContext, useContext, useEffect, useState } from "react";
+import React, {
+  createContext,
+  Dispatch,
+  SetStateAction,
+  useContext,
+  useState,
+} from "react";
 import { useCookies } from "react-cookie";
 
- export function UserContextProvider (){
-    return useContext<IContext>(context);
- }
+export function UserContextProvider() {
+  return useContext<IContext>(context);
+}
 export interface IContext {
-  loggedIn: string;
-  dis:boolean;
-  setDis(dis:boolean):void;
-  user : string|null;
-  setUser (user : string):void;
-
+  dis: boolean;
+  setDis(dis: boolean): void;
+  user: string | null;
+  setUser(user: string): void;
+  selectedUser: string | null;
+  setSelectedUser(selectedUser: string): void;
+  player: string;
+  op: string;
+  setPlayer: (player: string) => null;
+  setOp: (op: string) => null;
+  currentPlayer: string | null;
+  setCurrentPlayer: (currentPlayer: string) => null;
 }
 
 const defaultval: IContext = {
-  loggedIn: "",
-  dis:false,
-  setDis : ()=>null,
-  user :"",
-  setUser : ()=>null
+  dis: false,
+  setDis: (dis) => null,
+  user: "",
+  setUser: (user) => null,
+  selectedUser: localStorage.getItem("selectedUser"),
+  setSelectedUser: (selectedUser) => null,
+  player: "",
+  op: localStorage.getItem("op")||"",
+  setOp: (op) => null,
+  setPlayer: (player) => null,
+  currentPlayer: localStorage.getItem("currentPlayer") || "",
+  setCurrentPlayer: (currentPlayer) => null,
 };
 
- export  const context = createContext<IContext>(defaultval);
+export const context = createContext<IContext>(defaultval);
 
 function UseContext({ children }) {
-  const [cookies] = useCookies(["accessToken"]);
-  const [loggedIn, setLoggedIn] = useState(cookies.accessToken?.value);
-  const [dis , setDis] = useState(false)
-  const [user , setUser] = useState<string>("")
-  const [path , setPath ]= useState(window.location.href);
-  
+  const [dis, setDis] = useState(false);
+  const [user, setUser] = useState<string>("");
+  const [selectedUser, setSelectedUser] = useState<string | null>(
+    localStorage.getItem("selectedUser")
+  );
+  const [player, setPlayer] = useState("");
+  const [op, setOp] = useState(localStorage.getItem("op") ||  "");
+  const [currentPlayer, setCurrentPlayer] = useState(
+    localStorage.getItem("current") || ""
+  );
 
-  const userInfo = async ()=>{
-    try {
-     const res = await axios.get(`/api/users/me` );
-      setUser(res.data.user.userName)
-    
-      localStorage.setItem("user" , res.data.user._id);
-    } catch (error :any ) {
-     console.log(error)
-    }
-   }
-   useEffect(() => {
-    if (typeof window !== "undefined") {
-      setPath(window.location.href);
-      userInfo();
-    
-    }
-  }, [path]);
-
-  
   const valContext: IContext = {
-    loggedIn,
     dis,
     setDis,
     user,
-    setUser
+    setUser,
+    selectedUser,
+    setSelectedUser,
+    player,
+    setPlayer,
+    op,
+    setOp,
+    currentPlayer,
+    setCurrentPlayer,
   };
-
 
   return <context.Provider value={valContext}>{children}</context.Provider>;
 }

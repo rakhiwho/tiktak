@@ -1,7 +1,8 @@
 import Navbar from "./components/Navbar";
 import UseContext from "./context/UseContext";
-
+import "./styles/color.css"
 import "./globals.css";
+import "./global.css"
 import Socketio from "./socketContext/socketContext.jsx";
 export const metadata = {
   title: "Next.js",
@@ -15,10 +16,19 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Quicksand:wght@300..700&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body className="national-bg flex">
+
         <UseContext>
           <Socketio>
-            <Navbar />
+            <Navbar/>
             {children}
           </Socketio>
         </UseContext>

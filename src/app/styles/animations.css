@@ -1,0 +1,22 @@
+.bgAni:hover{
+ animation: colorChange 1s ease-in-out infinite;
+}
+@keyframes colorChange {
+  0%   { background-color: #3b811d; }
+  25%  { background-color: #2f7215; }
+  50%  { background-color: #1a8541; }
+  75%  { background-color: #0f5b2b; }
+  100% { background-color: #0b2a05; }
+}
+.hidden_custom {
+  opacity: 0;
+  transform: scale(0.5) translateY(29) ;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.show {
+  display: inline-block;
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}

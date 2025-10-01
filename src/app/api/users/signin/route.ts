@@ -43,12 +43,12 @@ export async function POST(request: NextRequest) {
       user._id
     );
     const options = {
-      httpOnly: false,
+    
       secure: process.env.NODE_ENV === 'production',
     };
  
     const response = NextResponse.json(
-      { type: "logged in successfully" + user },
+      { type:  user },
       { status: 200 }
     );
 

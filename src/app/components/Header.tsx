@@ -3,12 +3,11 @@
  
 'use client'
 import React, { useContext, useEffect } from 'react'
-import pfp from '../fonts/favicon.png';
 import { GiHamburgerMenu } from "react-icons/gi";
-import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { context, IContext } from '../context/UseContext'; // Import the correct context
 import './style.css'
+import "../global.css"
 function Header() {
   const router = useRouter();
 
@@ -18,15 +17,13 @@ useEffect(()=>{
  
 },[dis])
   return (
-    <div className={`flex  flex-row content-center`}>
+    <div className={`flex  flex-row content-center items-center`}>
       <GiHamburgerMenu 
         onClick={() => setDis(!dis)} 
         className={` ${dis ? 'rotate-90' : ""} sm w-fit rotate-on-hover ham self-center p-1 size-7`} 
       />
-      <div>
-        <Image className=' w-[8vw] sm:w-[4vw] md:w-[4vw] lg:w-[4vw] rounded-full' src={pfp} alt=":)" />
-      </div>
-      <h1 onClick={()=>router.push('/')} className='self-center'>webName</h1>
+      
+      <h1 onClick={()=>router.push('/')} className=' caveat-6   text-4xl text-4 text-center ml-3 '>web_name</h1>
     </div>
   )
 }

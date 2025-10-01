@@ -30,7 +30,7 @@ export async function POST(request: NextRequest) {
         { status: 400 }
       );
     }
-    console.log(password)
+     
     
     const hashedPassword = await bcrypt.hash(password, 10);
 
@@ -41,7 +41,7 @@ export async function POST(request: NextRequest) {
     });
 
     const saved_User = await new_user.save();
-     console.log(saved_User)
+     
     return NextResponse.json(
       { type: UserResponse.USER_CREATED, success: true, saved_User },
       { status: 201 }

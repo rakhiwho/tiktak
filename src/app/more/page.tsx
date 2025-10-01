@@ -2,8 +2,8 @@ import React from 'react'
 
 function page() {
   return (
-    <div>
-      mxbczjdj
+    <div className='bg-pale-3 h-[100vh] width-uni'>
+     
     </div>
   )
 }

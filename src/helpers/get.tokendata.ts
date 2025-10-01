@@ -1,4 +1,3 @@
-import { statusError } from "@/error/status.errors";
 import { UserError } from "@/error/userError";
 import jwt from "jsonwebtoken";
 import { NextRequest, NextResponse } from "next/server";

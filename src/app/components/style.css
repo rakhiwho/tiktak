@@ -3,8 +3,9 @@
     background-size: cover;
     background-position: center;
   }
+  
   .nav{
-    width: var(--width);
+    width:var(--width)vw;
     height: var(--height);
  }
 
