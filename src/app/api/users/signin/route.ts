@@ -31,7 +31,7 @@ export async function POST(request: NextRequest) {
         { status: 404 }
       );
     }
-
+    console.log(password)
     const password_is_valid = await user.isPasswordCorrect(password);
     if (!password_is_valid) {
       return NextResponse.json(

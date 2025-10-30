@@ -8,7 +8,7 @@ import SideBar from '../components/sideBar/SideBar';
 function page() {
    const {onlineUsers} = SocketContextProvider();
   return (
-    <div className=' flex justify-around w-[100vw] margin_home text-pale-1 bg-pale-2 h-[100vh]  '>
+    <div className=' flex justify-around w-[100vw] margin_home text-pale-1 national-bg h-[100vh]  '>
        <TicTacToe />
     </div>
    

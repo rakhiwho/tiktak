@@ -51,74 +51,82 @@ function SignupPage() {
         <h1 className="text-center michroma-5 text-3xl ">sign up:</h1>
         <div className="divider w-[400px] self-center"></div>
         <div className=" px-[10vw]">
-
-        <div className="flex flex-col">
-          <p
-            className={` ${
-              user.userName != "" ? "show " : "hidden_custom"
-            }  michroma-1  pb-1 `}
-          >
-            username
-          </p>
-          <input
-            value={user.userName}
-            onChange={(e) => setUser({ ...user, userName: e.target.value })}
-            type="text"
-            name="userName"
-            placeholder="username "
-            id="userName"
-            className=" bg-white bg-opacity-40 text-lime-950 michroma-8 mb-2 border-none outline-none p-1 rounded-md "
-          />
-        </div>
-        <div className="flex flex-col">
-          <p
-            className={` ${
-              user.email != "" ? "show " : "hidden_custom"
-            }  michroma-1  pb-1 `}
-          >
-            email
-          </p>
-
-          <input
-            value={user.email}
-            onChange={(e) => setUser({ ...user, email: e.target.value })}
-            type="text"
-            name="email"
-            id="email"
-            placeholder="email"
-            pattern="[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+"
-            title="Please enter a valid email address"
-            className=" bg-white bg-opacity-40 text-lime-950 michroma-8 mb-2 border-none outline-none p-1 rounded-md "
-          />
-        </div>
-        <div className="flex flex-col">
-          <p
-            className={` ${
-              user.password != "" ? "show " : "hidden_custom"
-            }  michroma-1  pb-1 `}
+          <div className="flex flex-col">
+            <p
+              className={` ${
+                user.userName != "" ? "show " : "hidden_custom"
+              }  michroma-1  pb-1 `}
             >
-            password
-          </p>
-          <input
-            value={user.password}
-            onChange={(e) => setUser({ ...user, password: e.target.value })}
-            type="password"
-            name="password"
-            id="password"
-            placeholder="password"
-            minLength={3}
-            maxLength={10}
-            className=" bg-white bg-opacity-40 text-lime-950 michroma-8 mb-2 border-none outline-none p-1 rounded-md "
+              username
+            </p>
+            <input
+              value={user.userName}
+              onChange={(e) => setUser({ ...user, userName: e.target.value })}
+              type="text"
+              name="userName"
+              placeholder="username "
+              id="userName"
+              className=" bg-white bg-opacity-40 text-lime-950 michroma-8 mb-2 border-none outline-none p-1 rounded-md "
             />
+          </div>
+          <div className="flex flex-col">
+            <p
+              className={` ${
+                user.email != "" ? "show " : "hidden_custom"
+              }  michroma-1  pb-1 `}
+            >
+              email
+            </p>
+
+            <input
+              value={user.email}
+              onChange={(e) => setUser({ ...user, email: e.target.value })}
+              type="text"
+              name="email"
+              id="email"
+              placeholder="email"
+              pattern="[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+"
+              title="Please enter a valid email address"
+              className=" bg-white bg-opacity-40 text-lime-950 michroma-8 mb-2 border-none outline-none p-1 rounded-md "
+            />
+          </div>
+          <div className="flex flex-col">
+            <p
+              className={` ${
+                user.password != "" ? "show " : "hidden_custom"
+              }  michroma-1  pb-1 `}
+            >
+              password
+            </p>
+            <input
+              value={user.password}
+              onChange={(e) => setUser({ ...user, password: e.target.value })}
+              type="password"
+              name="password"
+              id="password"
+              placeholder="password"
+              minLength={3}
+              maxLength={10}
+              className=" bg-white bg-opacity-40 text-lime-950 michroma-8 mb-2 border-none outline-none p-1 rounded-md "
+            />
+          </div>
+          <button
+            type="submit"
+            className="btn bgAni michroma-5 text-xl  border-none rounded-lg mt-3 bg-slate-600"
+          >
+            {" "}
+            SIGN UP{" "}
+          </button>
         </div>
-       <button type="submit" className="btn bgAni michroma-5 text-xl  border-none rounded-lg mt-3 bg-slate-600"> SIGN UP </button>
-            </div>
       </form>
-          <div className="divider relative z-20 w-[600px] self-center"></div>
+      <div className="divider relative z-20 w-[600px] self-center"></div>
 
-      <Link className="relative michroma-1 mt-[10px] z-20 text-white tracking-[3px] "
-        href="login">already signed up?! login</Link>
-
+      <Link
+        className="relative michroma-1 mt-[10px] z-20 text-white tracking-[3px] "
+        href="login"
+      >
+        already signed up?! login
+      </Link>
     </div>
   );
 }

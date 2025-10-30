@@ -86,11 +86,11 @@ export const Socketio = ({ children }) => {
   useEffect(() => {
     const receive = ({ p, user }) => {
       console.log(p + " " + user);
+      setPlayer(p)
       if (p == "X") {
-        setPlayer("O");
         localStorage.setItem("you", `O`);
       } else {
-        setPlayer("X");
+        
         localStorage.setItem("you", `X`);
       }
       setOp(user);

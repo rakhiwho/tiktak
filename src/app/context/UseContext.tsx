@@ -8,6 +8,7 @@ import React, {
   useState,
 } from "react";
 import { useCookies } from "react-cookie";
+import GameCrud from "../hooks/game";
 
 export function UserContextProvider() {
   return useContext<IContext>(context);
@@ -34,7 +35,7 @@ const defaultval: IContext = {
   setUser: (user) => null,
   selectedUser: localStorage.getItem("selectedUser"),
   setSelectedUser: (selectedUser) => null,
-  player: "",
+  player: localStorage.getItem("player") || "" ,
   op: localStorage.getItem("op")||"",
   setOp: (op) => null,
   setPlayer: (player) => null,
@@ -50,12 +51,12 @@ function UseContext({ children }) {
   const [selectedUser, setSelectedUser] = useState<string | null>(
     localStorage.getItem("selectedUser")
   );
-  const [player, setPlayer] = useState("");
+  const [player, setPlayer] = useState(localStorage.getItem("player"));
   const [op, setOp] = useState(localStorage.getItem("op") ||  "");
   const [currentPlayer, setCurrentPlayer] = useState(
-    localStorage.getItem("current") || ""
+    localStorage.getItem("player") || ""
   );
-
+  
   const valContext: IContext = {
     dis,
     setDis,

@@ -17,7 +17,7 @@ function Header( {pfp , userName , userId} :  { pfp : string , userName : string
                 /> : <User className="text-[30px] text-lime-900 "/>} 
               </div>
               <div>
-                <p className='michroma-4 tracking-[2px]'>{userName}</p>
+                <p className='michroma-4 tracking-[2px] green-txt-1'>{userName}</p>
               </div>
               
         </div>

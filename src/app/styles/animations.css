@@ -8,6 +8,39 @@
   75%  { background-color: #0f5b2b; }
   100% { background-color: #0b2a05; }
 }
+.appear1{
+  width: 40vw;
+   transform-origin: right; 
+ animation: w 0.5s ease-in-out infinite;
+}
+@keyframes w {
+  0%   {  width: 2vw;
+ }
+  25%  {   width: 4vw;
+}
+  50%  {   width: 8vw;
+ }
+  75%  {  width: 16vw;
+ }
+  90%  {  width: 24vw;
+ }
+  100% {   width: 32vw;
+ }
+}
+.appear {
+  width: 40vw; /* starting width */
+  animation: w 1s ease-in-out   ;
+  transform-origin: left; /* anchor the right edge */
+}
+
+@keyframes w {
+  0%   { transform: scaleX(0.01); }
+  25%  { transform: scaleX(0.03); }
+  50%  { transform: scaleX(0.05); }
+  75%  { transform: scaleX(0.1); }
+  90%  { transform: scaleX(0.5); }
+  100% { transform: scaleX(0.8); }
+}
 .hidden_custom {
   opacity: 0;
   transform: scale(0.5) translateY(29) ;

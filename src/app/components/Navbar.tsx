@@ -10,9 +10,15 @@ import Cookies from "js-cookie";
 import Image from "next/image";
 import { Friends, Play, User } from "../reactIcons";
 import { usePathname, useRouter } from "next/navigation";
+import Link from "next/link";
 function Navbar() {
+
+
   const path = usePathname()
   const router = useRouter();
+
+
+  
   return (
     <div className="bg-black h-[100vh] w-[65px] flex-col flex items-center  border-r-[2px] border-lime-800  ">
       <div className="flex flex-col  items-center justify-between h-[25vh]">
@@ -28,8 +34,8 @@ function Navbar() {
             src="/media/logo.jpg"
           />
         </div>
-        <div
-          onClick={() => router.push("./play")}
+        <Link href={"/play"}
+          // onClick={() => router.push("/play")}
           className={` h-[45px]  w-[45px]  justify-center  mt-2  ${
             path == "/play"
               ? "rounded-md green-bg-3"
@@ -37,9 +43,9 @@ function Navbar() {
           } flex items-center overflow-hidden `}
         >
           <Play className=" text-[30px] green-txt-1 " />
-        </div>
-        <div
-          onClick={() => router.push("./friends")}
+        </Link>
+        <Link href={"/friends"}
+          // onClick={() => router.push("/friends")}
           className={` h-[45px]  w-[45px]  justify-center  mt-2  ${
             path == "/friends"
               ? "rounded-md green-bg-3"
@@ -47,9 +53,9 @@ function Navbar() {
           } flex items-center overflow-hidden `}
         >
           <Friends className=" text-[30px] green-txt-1 " />
-        </div>
-        <div
-          onClick={() => router.push("./profile")}
+        </Link>
+        <Link href={"/profile"}
+          onClick={() => router.push("/profile")}
           className={` h-[45px]  w-[45px]  justify-center  mt-2  ${
             path == "/profile"
               ? "rounded-md green-bg-3"
@@ -57,7 +63,7 @@ function Navbar() {
           } flex items-center overflow-hidden `}
         >
           <User className=" text-[30px] green-txt-1 " />
-        </div>
+        </Link>
       </div>
     </div>
   );

@@ -5,7 +5,11 @@ import { FaApple } from "react-icons/fa";
 import { IoLogoAndroid } from "react-icons/io";
 import { FaYoutube } from "react-icons/fa";
 import { FaDiscord } from "react-icons/fa";
-
+import { IoSearch } from "react-icons/io5";
+import { FaRegCircle } from "react-icons/fa6";
+import { GiCrossMark } from "react-icons/gi";
+import { GiAlienStare } from "react-icons/gi";
+import { GiTwirlyFlower } from "react-icons/gi";
 export {
     FaUserFriends as Friends, 
     TbGrid3X3 as Play ,
@@ -13,6 +17,12 @@ export {
     FaDiscord as Discord ,
     FaApple as Apple ,
     FaYoutube as Youtube,
-    IoLogoAndroid as Android
+    IoLogoAndroid as Android,
+    IoSearch  as Search ,
+    FaRegCircle as Circle,
+    GiCrossMark as Cross,
+   GiAlienStare  as Alien ,
+   GiTwirlyFlower as Flower
+
 
 }
