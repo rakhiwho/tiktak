@@ -22,11 +22,12 @@ export const Socketio = ({ children }) => {
     ["", "", ""],
     ["", "", ""],
   ]);
+  console.log(process.env.NEXT_PUBLIC_API_URL)
   const user = localStorage.getItem("user");
   const { setPlayer, player, op, setOp } = UserContextProvider();
   useEffect(() => {
     if (cookie && user) {
-      const socketInstance = io("http://localhost:3005/", {
+      const socketInstance = io( process.env.NEXT_PUBLIC_API_URL , {
         query: { user },
       });
       setSOCKET(socketInstance);

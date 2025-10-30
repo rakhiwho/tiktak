@@ -11,7 +11,8 @@ export async function GET(req: NextRequest) {
   try {
     const userID = await getDataFromToken(req);
     if (!userID || typeof userID === "object") {
-      return userID;
+      
+      return NextResponse.json({ user: userID || "something swrong"}); 
     }
 
     const user = await UserModel.findById(userID);
