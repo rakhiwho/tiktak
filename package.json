@@ -6,9 +6,10 @@
     "build:tailwind": "ts-node tailwind.config.ts",
     "dev": "next dev --turbopack",
     "build": "next build --no-lint",
-    "start": "npm start",
+    "start": "next start",
     "lint": "next lint"
   },
+  
   "dependencies": {
     "@types/jsonwebtoken": "^9.0.7",
     "axios": "^1.7.7",
