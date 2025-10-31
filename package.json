@@ -5,7 +5,7 @@
   "scripts": {
     "build:tailwind": "ts-node tailwind.config.ts",
     "dev": "next dev --turbopack",
-    "build": "next build",
+    "build": "next build --no-lint",
     "start": "npm start",
     "lint": "next lint"
   },

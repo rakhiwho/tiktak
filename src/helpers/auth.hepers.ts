@@ -1,6 +1,5 @@
 import { statusError } from "@/error/status.errors";
 import { UserError } from "@/error/userError";
-import {  Tokens } from "@/interface/IUser";
 import UserModel from "@/model/user";
 import mongoose from "mongoose";
 import { ApiError } from "next/dist/server/api-utils";

@@ -3,14 +3,14 @@ import React, { useRef, useState } from 'react'
 function OPtBlocks() {
     const [play , setPlay] = useState(false);
     
-  const videoRef = useRef(null);
+  const videoRef =  useRef<HTMLVideoElement>(null);
 
   const handleMouseEnter = () => {
-    videoRef?.current.play();
+    videoRef.current!.play();
   };
 
   const handleMouseLeave = () => {
-    videoRef?.current.pause();
+    videoRef.current!.pause();
   };
 
   return (

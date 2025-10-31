@@ -9,7 +9,7 @@ import { UserContextProvider } from "../context/UseContext";
 
 const SocketContext = createContext();
 export const Socketio = ({ children }) => {
-  const gameId = localStorage.getItem("gameId");
+  const gameId = typeof window !== "undefined" ?localStorage.getItem("gameId"): null ;
   const router = useRouter();
   const cookie = Cookies.get("accessToken");
   const [onlineUsers, setOnlineUsers] = useState([]);
@@ -23,7 +23,7 @@ export const Socketio = ({ children }) => {
     ["", "", ""],
   ]);
   console.log(process.env.NEXT_PUBLIC_API_URL)
-  const user = localStorage.getItem("user");
+  const user =  typeof window !== "undefined" ?localStorage.getItem("user"): null ;
   const { setPlayer, player, op, setOp } = UserContextProvider();
   useEffect(() => {
     if (cookie && user) {

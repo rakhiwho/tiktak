@@ -13,13 +13,13 @@ function OfflineGame() {
   const [winner, setWinner] = useState(newGame.WINNER);
   const [draw, setDraw] = useState(newGame.DRAW);
 
-  let x = parseInt(localStorage.getItem("x") || "0", 10);
-  let o = parseInt(localStorage.getItem("o") || "0", 10);
+  let x =  typeof window !== "undefined"  && parseInt(localStorage.getItem("x") || "0", 10);
+  let o =   typeof window !== "undefined" && parseInt(localStorage.getItem("o") || "0", 10);
   const [game, setGame] = useState(newGame.board.map((row) => [...row]));
   useEffect(() => {
     if (winner == "") return;
     if (winner == "O") {
-      let count = parseInt(localStorage.getItem("o") || "0", 10);
+      let count =  parseInt(localStorage.getItem("o") || "0", 10);
 
       count += 1;
       o = count;

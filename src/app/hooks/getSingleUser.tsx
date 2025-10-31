@@ -26,5 +26,5 @@ function GetSingleUser() {
 
   return { data, loading };
 }
-s
+
 export default GetSingleUser;

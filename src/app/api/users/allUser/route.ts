@@ -10,7 +10,7 @@ export async function GET( req  :NextRequest){
       const userId = await getDataFromToken(req);
       const arr = await UserModel.find({_id : {$ne :userId}});
       return NextResponse.json({type : arr} , {status : 200})
-   }catch(error :any){
+   }catch(error : any){
      console.log(error)
     return  NextResponse.json({type : "something went wrong"} , {status : 500})
    }

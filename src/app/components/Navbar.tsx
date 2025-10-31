@@ -1,12 +1,8 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import Header from "./Header";
-import Menu from "./Menu";
+import React from "react";
 import "../globals.css";
 import "../global.css";
 import "./style.css";
-import UseContext from "../context/UseContext";
-import Cookies from "js-cookie";
 import Image from "next/image";
 import { Friends, Play, User } from "../reactIcons";
 import { usePathname, useRouter } from "next/navigation";

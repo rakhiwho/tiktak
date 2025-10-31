@@ -11,7 +11,8 @@ function Content() {
     <div className="h-fit rounded-2xl   fixed top-[4vh] bg-4 p-4  overflow-visible">
       <ul className="ml-4 w-[20vw] ">
         <li
-          onMouseEnter={(e) => router(`/${e.target.innerText}`)}
+       data-path="/profile"
+       onMouseEnter={(e) => router(e.currentTarget.dataset.path!)}
           className="py-2 hover-bg"
         >
           profile
@@ -22,21 +23,24 @@ function Content() {
         </li>
         <Divider css="" />
         <li
-          onMouseEnter={(e) => router(`/${e.target.innerText}`)}
+         data-path="/play"
+         onMouseEnter={(e) => router(e.currentTarget.dataset.path!)}
           className="py-2 hover-bg"
         >
           play
         </li>
         <Divider css="" />
         <li
-          onMouseEnter={(e) => router(`/${e.target.innerText}`)}
+         data-path="/scores"
+         onMouseEnter={(e) => router(e.currentTarget.dataset.path!)}
           className="py-2 hover-bg"
         >
           scores
         </li>
         <Divider css="" />
         <li
-          onMouseEnter={(e) => router(`/${e.target.innerText}`)}
+       data-path="/more"
+       onMouseEnter={(e) => router(e.currentTarget.dataset.path!)}
           className="py-2 hover-bg"
         >
           more

@@ -5,12 +5,16 @@ import React, { useEffect, useState } from "react";
 import PopUP from "../game/PopUP";
 import { useRouter } from "next/navigation";
 import FriendsTag from "./FriendsTag";  
-import { FaSearch } from "react-icons/fa";
-import { LuMailSearch } from "react-icons/lu";
+ 
 import { Search } from "@/app/reactIcons";
-
+import { IUser } from "@/interface/IUser";
+type User = {
+  _id: string;
+  name: string;
+  // add other fields if needed
+};
 function SideBar() {
-  const { onlineUsers, SOCKET, start } = SocketContextProvider();
+  const { onlineUsers   , SOCKET, start } = SocketContextProvider();
 
   const {
     selectedUser,
@@ -27,7 +31,7 @@ function SideBar() {
 
   const getOnline = () => {
     return data?.filter(
-      (user) => onlineUsers && user?._id && onlineUsers[user._id]
+      (user : User) => onlineUsers && user?._id && onlineUsers[user?._id]
     );
   };
   const router = useRouter();
@@ -97,7 +101,7 @@ function SideBar() {
         />
       </label>
       <div className="flex flex-col justify-start pl-3 h-[30vh] lg:h-[90vh]  overflow-scroll ">
-        {data?.map((e) => (
+        {data?.map((e : IUser) => (
           <div key={e._id}>
             <FriendsTag pfp="" userName={e.userName} userId={e._id} />
           </div>
