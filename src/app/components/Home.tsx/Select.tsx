@@ -5,10 +5,10 @@ import OPtBlocks from './OPtBlocks'
 function Select() {
 
   return (
-    <div className='flex mt-4 w-[70vw] justify-between'>
+    <div className=' flex md:flex-row items-center pl-0  flex-col mt-4 md:w-[70vw]  lg:w-[70vw] justify-between'>
      <OPtBlocks />
      <OPtBlocks />
-     <OPtBlocks />
+  
     </div>
   )
 }

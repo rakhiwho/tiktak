@@ -5,7 +5,7 @@ import Home from './Home'
 
 function page() {
   return (
-    <div className='flex'>
+    <div className='flex overflow-hidden'>
       <Home/>
     </div>
   )

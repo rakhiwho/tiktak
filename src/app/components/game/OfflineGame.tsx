@@ -90,19 +90,19 @@ function OfflineGame() {
             <div className="h-fit  flex w-fit  ">
               <div
                 onClick={() => HandleClick(0, 0)}
-                className="w-[200px] hover:bg-opacity-75 border-r-[1px] green-txt-1 border-lime-600 border-b-[1px]  bg-lime-950 bg-opacity-50  h-[200px] flex items-center justify-center text-2xl text-black text-center "
+                className=" grid-w  hover:bg-opacity-75 border-r-[1px] green-txt-1 border-lime-600 border-b-[1px]  bg-lime-950 bg-opacity-50  h-[200px] flex items-center justify-center text-2xl text-black text-center "
               >
                 <Turn turn={game[0][0]} />
               </div>
               <div
                 onClick={() => HandleClick(0, 1)}
-                className="w-[200px] hover:bg-opacity-75 bg-lime-950 green-txt-1 bg-opacity-50 border-r-[1px] border-lime-600 h-[200px] flex items-center justify-center text-2xl text-black text-center "
+                className=" grid-w  hover:bg-opacity-75 bg-lime-950 green-txt-1 bg-opacity-50 border-r-[1px] border-lime-600 h-[200px] flex items-center justify-center text-2xl text-black text-center "
               >
                 <Turn turn={game[0][1]} />
               </div>
               <div
                 onClick={() => HandleClick(0, 2)}
-                className="w-[200px] hover:bg-opacity-75 bg-lime-950 green-txt-1 bg-opacity-50 border-b-[1px] border-lime-600 h-[200px] flex items-center justify-center text-2xl text-black text-center "
+                className=" grid-w  hover:bg-opacity-75 bg-lime-950 green-txt-1 bg-opacity-50 border-b-[1px] border-lime-600 h-[200px] flex items-center justify-center text-2xl text-black text-center "
               >
                 <Turn turn={game[0][2]} />
               </div>
@@ -111,19 +111,19 @@ function OfflineGame() {
             <div className="h-fit flex w-fit">
               <div
                 onClick={() => HandleClick(1, 0)}
-                className="w-[200px] hover:bg-opacity-75 bg-lime-950 green-txt-1 bg-opacity-50 border-b-[1px] border-lime-600  h-[200px] flex items-center justify-center text-2xl text-black text-center "
+                className=" grid-w  hover:bg-opacity-75 bg-lime-950 green-txt-1 bg-opacity-50 border-b-[1px] border-lime-600  h-[200px] flex items-center justify-center text-2xl text-black text-center "
               >
                 <Turn turn={game[1][0]} />
               </div>
               <div
                 onClick={() => HandleClick(1, 1)}
-                className="w-[200px] hover:bg-opacity-75 bg-lime-950 green-txt-1 bg-opacity-50 border-[1px] border-lime-600  h-[200px] flex items-center justify-center text-2xl text-black text-center "
+                className=" grid-w  hover:bg-opacity-75 bg-lime-950 green-txt-1 bg-opacity-50 border-[1px] border-lime-600  h-[200px] flex items-center justify-center text-2xl text-black text-center "
               >
                 <Turn turn={game[1][1]} />
               </div>
               <div
                 onClick={() => HandleClick(1, 2)}
-                className="w-[200px] hover:bg-opacity-75 bg-lime-950  green-txt-1 bg-opacity-50 border-b-[1px] border-lime-600 h-[200px] flex items-center justify-center text-2xl text-black text-center "
+                className=" grid-w  hover:bg-opacity-75 bg-lime-950  green-txt-1 bg-opacity-50 border-b-[1px] border-lime-600 h-[200px] flex items-center justify-center text-2xl text-black text-center "
               >
                 <Turn turn={game[1][2]} />
               </div>
@@ -132,19 +132,19 @@ function OfflineGame() {
             <div className="h-fit flex w-fit border-b-[1px] border-lime-600">
               <div
                 onClick={() => HandleClick(2, 0)}
-                className="w-[200px] hover:bg-opacity-75  bg-lime-950 green-txt-1 bg-opacity-50 border-r-[1px] border-lime-600 h-[200px] flex items-center justify-center text-2xl text-black text-center "
+                className=" grid-w  hover:bg-opacity-75  bg-lime-950 green-txt-1 bg-opacity-50 border-r-[1px] border-lime-600 h-[200px] flex items-center justify-center text-2xl text-black text-center "
               >
                 <Turn turn={game[2][0]} />
               </div>
               <div
                 onClick={() => HandleClick(2, 1)}
-                className="w-[200px] hover:bg-opacity-75 bg-lime-950 green-txt-1 bg-opacity-50 border-r-[1px] border-lime-600  h-[200px] flex items-center justify-center text-2xl text-black text-center "
+                className=" grid-w  hover:bg-opacity-75 bg-lime-950 green-txt-1 bg-opacity-50 border-r-[1px] border-lime-600  h-[200px] flex items-center justify-center text-2xl text-black text-center "
               >
                 <Turn turn={game[2][1]} />
               </div>
               <div
                 onClick={() => HandleClick(2, 2)}
-                className="w-[200px] hover:bg-opacity-75 green-txt-1  bg-lime-950 bg-opacity-50  h-[200px] flex items-center justify-center text-2xl text-black text-center "
+                className=" grid-w  hover:bg-opacity-75 green-txt-1  bg-lime-950 bg-opacity-50  h-[200px] flex items-center justify-center text-2xl text-black text-center "
               >
                 <Turn turn={game[2][2]} />
               </div>

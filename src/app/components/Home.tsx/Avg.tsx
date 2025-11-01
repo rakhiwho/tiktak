@@ -11,9 +11,13 @@ function Avg() {
       </div>
       <div className=" top-0 left-0 w-full h-[1px] divider bg-slate-700 opacity-50 z-10" />
 
-      <div className="  w-[70vw] h-[30vh] mt-2  flex flex-col items-center overflow-scroll ">
+      <div className="  w-[70vw] h-[45vh] mt-2  flex flex-col items-center overflow-x-hidden overflow-y-scroll ">
         <Res pfp1="" pfp2=""  userName1="progamer_"  userName2="noob_gamer" id1="" id2="" />
         <Res pfp1="" pfp2=""  userName1="progamer_"  userName2="noob_gamer" id1="" id2="" />
+        <Res pfp1="" pfp2=""  userName1="progamer_"  userName2="noob_game" id1="" id2="" />
+        <Res pfp1="" pfp2=""  userName1="progamer_"  userName2="noob_game" id1="" id2="" />
+        <Res pfp1="" pfp2=""  userName1="progamer_"  userName2="noob_game" id1="" id2="" />
+        <Res pfp1="" pfp2=""  userName1="progamer_"  userName2="noob_game" id1="" id2="" />
         <Res pfp1="" pfp2=""  userName1="progamer_"  userName2="noob_game" id1="" id2="" />
         <Res pfp1="" pfp2=""  userName1="progamer_"  userName2="noob_game" id1="" id2="" />
       </div>

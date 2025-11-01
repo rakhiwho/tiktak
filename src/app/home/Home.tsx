@@ -9,11 +9,10 @@ import Footer from "../components/Home.tsx/Footer";
 
 function Home() {
   return (
-    <div className="flex flex-col items-center w-[100vw] ">
+    <div className="flex flex-col items-center overflow-hidden w-[100vw] ">
       <Header pfp="" userName="pro-gamer" userId="jshjh" />
 
       <div className=" h-[1px] w-[70%] mb-2 top-0 left-0 bg-opacity-40 bg-lime-600 opacity-50 z-10" />
-      <GamePlay />
       <Select/>
       <Avg/>
       <Footer/>

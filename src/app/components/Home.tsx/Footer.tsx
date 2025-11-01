@@ -3,7 +3,7 @@ import React from "react";
 
 function Footer() {
   return (
-    <footer className="footer absolute bottom-0 sm:footer-horizontal h-fit bg-neutral text-neutral-content justify-around p-10">
+    <footer className="footer absolute bottom-0 sm:footer-horizontal w-[90vw] flex sm:w-[88vw] sm:flex-row sm:left-[55px] left-[47px] h-fit bg-neutral text-neutral-content justify-around py-1 p-10">
       <nav className="flex flex-col items-center justify-center">
         <h6 className=" michroma-3 footer-title">Services</h6>
         <div className="flex w-[100px] flex-row justify-between ">
@@ -17,7 +17,7 @@ function Footer() {
       </nav>
       <nav className="flex flex-col items-center justify-center">
         <h6 className="footer-title michroma-3">Company</h6>
-        <div className="flex w-[400px] flex-row justify-between ">
+        <div className="flex w-[200px] flex-row justify-between ">
           <a className="link link-hover michroma-1 ">About us</a>
           <a className="link link-hover michroma-1 ">Contact</a>
         </div>
