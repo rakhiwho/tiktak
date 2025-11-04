@@ -22,6 +22,7 @@ export const Socketio = ({ children }) => {
     ["", "", ""],
     ["", "", ""],
   ]);
+  const [data , setData] = useState({});
   console.log(process.env.NEXT_PUBLIC_API_URL)
   const user =  typeof window !== "undefined" ?localStorage.getItem("user"): null ;
   const { setPlayer, player, op, setOp } = UserContextProvider();
@@ -103,13 +104,13 @@ export const Socketio = ({ children }) => {
       SOCKET?.off("inviteAccepted", receive);
     };
   });
+  
   async function getUserMe() {
-    let data = null;
+  let data1= null;
     if (cookie) {
-      data = await axiosInstance.get(`/api/users/me`);
-    } else {
-      data = null;
-    }
+      data1 = await axiosInstance.get(`/api/users/me`);
+      setData({...data1})
+    } 
   }
   useEffect(() => {
     const gameId = ({ id }) => {
@@ -124,9 +125,12 @@ export const Socketio = ({ children }) => {
   });
 
   useEffect(() => {
-    getUserMe();
+    if(data == null){
+
+      getUserMe();
+    }
   }, [cookie]);
-  const { data, startGame, updateGame, getGame } = GameCrud();
+  const {  startGame } = GameCrud();
 
   const start = async () => {
     const res = await startGame({
@@ -146,7 +150,6 @@ export const Socketio = ({ children }) => {
         SOCKET?.emit("sendGameID", { id: res._id, user: op });
       } else {
         console.log("couldnt")
-        // alert(" game failed send another invite ");
       }
     }, 3000);
   };
@@ -160,6 +163,7 @@ export const Socketio = ({ children }) => {
     game,
     setGame,
     start,
+    data
   };
   return (
     <SocketContext.Provider value={value}>{children}</SocketContext.Provider>

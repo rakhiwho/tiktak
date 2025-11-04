@@ -7,19 +7,17 @@ import Image from "next/image";
 import { Friends, Play, User } from "../reactIcons";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
+
+
 function Navbar() {
-
-
-  const path = usePathname()
+  const path = usePathname();
   const router = useRouter();
 
-
-  
   return (
     <div className="bg-black h-[100vh] w-[65px] flex-col flex items-center  border-r-[2px] border-lime-800  ">
       <div className="flex flex-col  items-center justify-between h-[25vh]">
         <div
-          onClick={() => router.push("./home")}
+          onClick={() => router.push("/home")}
           className=" h-[45px]  w-[45px]  mt-2 rounded-full flex items-center overflow-hidden "
         >
           <Image
@@ -30,8 +28,8 @@ function Navbar() {
             src="/media/logo.jpg"
           />
         </div>
-        <Link href={"/play"}
-          // onClick={() => router.push("/play")}
+        <Link
+          href={"/play"}
           className={` h-[45px]  w-[45px]  justify-center  mt-2  ${
             path == "/play"
               ? "rounded-md green-bg-3"
@@ -40,8 +38,8 @@ function Navbar() {
         >
           <Play className=" text-[30px] green-txt-1 " />
         </Link>
-        <Link href={"/friends"}
-          // onClick={() => router.push("/friends")}
+        <Link
+          href={"/friends"}
           className={` h-[45px]  w-[45px]  justify-center  mt-2  ${
             path == "/friends"
               ? "rounded-md green-bg-3"
@@ -50,7 +48,8 @@ function Navbar() {
         >
           <Friends className=" text-[30px] green-txt-1 " />
         </Link>
-        <Link href={"/profile"}
+        <Link
+          href={"/profile"}
           onClick={() => router.push("/profile")}
           className={` h-[45px]  w-[45px]  justify-center  mt-2  ${
             path == "/profile"

@@ -1,7 +1,6 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef } from 'react'
 
 function OPtBlocks() {
-    const [play , setPlay] = useState(false);
     
   const videoRef =  useRef<HTMLVideoElement>(null);
 

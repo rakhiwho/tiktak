@@ -9,6 +9,8 @@ import { IoSearch } from "react-icons/io5";
 import { FaRegCircle } from "react-icons/fa6";
 import { GiCrossMark } from "react-icons/gi";
 import { GiAlienStare } from "react-icons/gi";
+import { TbMailExclamation } from "react-icons/tb";
+import { FaPhoneSquareAlt } from "react-icons/fa";
 import { GiTwirlyFlower } from "react-icons/gi";
 export {
     FaUserFriends as Friends, 
@@ -22,7 +24,9 @@ export {
     FaRegCircle as Circle,
     GiCrossMark as Cross,
    GiAlienStare  as Alien ,
-   GiTwirlyFlower as Flower
+   GiTwirlyFlower as Flower,
+   TbMailExclamation as Mail,
+   FaPhoneSquareAlt as Phone
 
 
 }

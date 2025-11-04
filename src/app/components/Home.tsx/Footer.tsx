@@ -3,7 +3,7 @@ import React from "react";
 
 function Footer() {
   return (
-    <footer className="footer absolute bottom-0 sm:footer-horizontal w-[90vw] flex sm:w-[88vw] sm:flex-row sm:left-[55px] left-[47px] h-fit bg-neutral text-neutral-content justify-around py-1 p-10">
+    <footer className="footer absolute bottom-0 sm:footer-horizontal lg:w-[96vw] w-[90vw] flex md:w-[92.8vw] sm:flex-row md:left-[60px] lg:left-[64px] h-fit bg-neutral text-neutral-content justify-around py-1 p-10">
       <nav className="flex flex-col items-center justify-center">
         <h6 className=" michroma-3 footer-title">Services</h6>
         <div className="flex w-[100px] flex-row justify-between ">
