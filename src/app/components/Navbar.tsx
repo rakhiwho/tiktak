@@ -39,9 +39,9 @@ function Navbar() {
           <Play className=" text-[30px] green-txt-1 " />
         </Link>
         <Link
-          href={"/friends"}
+          href={"/friend"}
           className={` h-[45px]  w-[45px]  justify-center  mt-2  ${
-            path == "/friends"
+            path == "/friend"
               ? "rounded-md green-bg-3"
               : "rounded-full national-bg"
           } flex items-center overflow-hidden `}
